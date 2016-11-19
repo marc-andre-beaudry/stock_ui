@@ -1,0 +1,19 @@
+<md-toolbar class="app-toolbar" layout="row" layout-align="center center">
+    <div class="md-toolbar-tools">
+        <md-button aria-label="Menu" class="md-icon-button" ng-click="$ctrl.toggleAppNavbar()">
+            <md-icon>menu</md-icon>
+        </md-button>
+        <h1 class="app-toolbar-title"><strong>Stock UI</strong></h1>
+        <h3 hide-xs>{{$ctrl.location}}</h3>
+    </div>
+    <md-menu>
+        <md-button aria-label="Settings" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+            <md-icon md-menu-origin>settings</md-icon>
+        </md-button>
+        <md-menu-content width="2">
+            <md-menu-item>
+                <md-button ng-click="$ctrl.emptyActionClicked()">Empty Action</md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</md-toolbar>
