@@ -9,6 +9,8 @@ var instance = browserSync.create();
 
 gulp.task('serve', ['build'], function() {
     instance.init({
+        open: false,
+        browser: ["chrome"],
         server: conf.paths.serve
     });
     var watchPath = path.join(conf.paths.appRoot, '/**/*');
