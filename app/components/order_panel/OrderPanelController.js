@@ -2,10 +2,15 @@ function OrderPanelController($scope) {
     var vm = this;
     vm.isVisible = false;
 
-    function updatePath() {
+    // Events
+    $scope.$on('$locationChangeSuccess', function() {
         vm.isVisible = false;
-    };
-    $scope.$on('$locationChangeSuccess', updatePath);
+    });
+
+    $scope.$on('trade_stock_changed', function (event, arg) {
+        vm.stock = arg;
+        vm.isVisible = true;
+    });
 
     vm.hide = function() {
         vm.isVisible = false;

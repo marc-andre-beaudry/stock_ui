@@ -1,5 +1,5 @@
 angular.module('watchlist', ['ngMaterial', 'services']);
-angular.module('watchlist').controller('WatchlistController', [WatchlistController]);
+angular.module('watchlist').controller('WatchlistController', ['$rootScope', WatchlistController]);
 angular.module('watchlist').filter('roundMoney', function() {
   return function(input) {
     var input = Number.parseFloat(input);
@@ -8,8 +8,14 @@ angular.module('watchlist').filter('roundMoney', function() {
   };
 });
 
-function WatchlistController() {
+function WatchlistController($rootScope) {
     var vm = this;
+
+    vm.tradeStock = function(stock) {
+        $rootScope.$broadcast('trade_stock_changed', stock);
+    }
+
+
     vm.stocks = [
         {symbol:"AAPL", name:"Apple Inc"}, 
         {symbol:"MSFT", name:"Microsoft"}, 

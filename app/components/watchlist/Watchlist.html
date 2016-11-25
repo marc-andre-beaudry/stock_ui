@@ -14,7 +14,7 @@
                         <div flex="auto" class="stock-symbol">{{stock.symbol}}:NASDAQ</div>
                     </div>
                     <div flex="nogrow">
-                        <md-button md-no-ink class="md-primary">Trade</md-button>
+                        <md-button md-no-ink class="md-primary" ng-click="controller.tradeStock(stock)">Trade</md-button>
                     </div>
                 </div>                
             </md-subheader>
