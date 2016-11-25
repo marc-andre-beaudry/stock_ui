@@ -1,11 +1,11 @@
-function OrderPanelController($rootScope) {
+function OrderPanelController($scope) {
     var vm = this;
-    vm.isVisible = true;
+    vm.isVisible = false;
 
     function updatePath() {
-        vm.isVisible = true;
+        vm.isVisible = false;
     };
-    $rootScope.$on('$locationChangeSuccess', updatePath);
+    $scope.$on('$locationChangeSuccess', updatePath);
 
     vm.hide = function() {
         vm.isVisible = false;
@@ -15,7 +15,7 @@ function OrderPanelController($rootScope) {
 angular.module('order_panel', ['ngMaterial', 'services']);
 angular.module('order_panel').component('orderPanel', {
     templateUrl: 'components/order_panel/OrderPanel.html',
-    controller: ['$rootScope', OrderPanelController],
+    controller: ['$scope', OrderPanelController],
     bindings: {
         onSelect: '&'
     }

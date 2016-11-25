@@ -27,7 +27,7 @@
         <app-sidenav></app-sidenav>
         <div flex layout="column">
             <md-content class="app-body" flex ng-view><!-- Main Screen goes here --></md-content>
-            <order-panel></order-panel>
+            <order-panel class="app-body"></order-panel>
         </div>
     </div>
 </body>
@@ -46,6 +46,8 @@
 <script src="components/account/AccountController.js"></script>
 <script src="components/watchlist/WatchlistController.js"></script>
 <script src="components/stock_search/StockSearchController.js"></script>
+<script src="components/stock_search/StockSearchService.js"></script>
+<script src="components/stock_detail/StockDetailController.js"></script>
 <script src="app.js"></script>
 
 </html>

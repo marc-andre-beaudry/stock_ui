@@ -1,0 +1,28 @@
+<div ng-show="controller.noContent">
+    <h2 class="stock-detail-no-content">No content. Please search for a company.</h2>
+</div>
+<div ng-show="controller.invalidContent">
+    <h2 class="stock-detail-no-content">Unable to retrieve current company</h2>
+</div>
+<div ng-hide="controller.noContent || controller.invalidContent">
+     <md-card class="stock-detail-info">
+        <md-subheader class="md-no-sticky">Company Information</md-subheader>
+        <md-card-content>
+            View 1 Content
+        </md-card-content>
+    </md-card>
+
+     <md-card class="stock-detail-quotes">
+        <md-subheader class="md-no-sticky">Quotes</md-subheader>
+        <md-card-content>
+            View 1 Content
+        </md-card-content>
+    </md-card>
+
+    <md-card class="stock-detail-summary">
+        <md-subheader class="md-no-sticky">Business Summary</md-subheader>
+        <md-card-content>
+            {{controller.stock.info.summary}}
+        </md-card-content>
+    </md-card>
+</div>
