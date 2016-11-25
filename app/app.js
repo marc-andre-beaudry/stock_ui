@@ -1,6 +1,6 @@
 var app = angular.module(
     'app',
-    ['ngMaterial', 'ngRoute', 'services', 'view1', 'navigation', 'bottom_view']
+    ['ngMaterial', 'ngRoute', 'services', 'account', 'watchlist', 'stock_search', 'navigation', 'bottom_view']
 );
 
 app.config(function ($mdThemingProvider, $mdAriaProvider) {
@@ -20,12 +20,16 @@ app.config(function ($mdThemingProvider, $mdAriaProvider) {
 });
 
 app.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/view1', {
-        templateUrl: 'components/view1/View1.html',
-        controller: 'View1Controller as controller'
+    $routeProvider.when('/account', {
+        templateUrl: 'components/account/Account.html',
+        controller: 'AccountController as controller'
+    });
+    $routeProvider.when('/watchlist', {
+        templateUrl: 'components/watchlist/Watchlist.html',
+        controller: 'WatchlistController as controller'
     });
     $routeProvider.otherwise({
-        redirectTo: '/view1'
+        redirectTo: '/watchlist'
     });
 }
 ]);

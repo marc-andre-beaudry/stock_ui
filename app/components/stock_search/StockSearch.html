@@ -1,0 +1,14 @@
+<md-autocomplete 
+    md-min-length="0"
+    placeholder="Search for a company"
+    md-search-text="$ctrl.searchText"
+    md-selected-item="ctrl.selectedStock"
+    md-item-text="stock.symbol"
+    md-items="stock in $ctrl.queryStock($ctrl.searchText)">
+    <md-item-template>
+    <span md-highlight-text="$ctrl.searchText" md-highlight-flags="^i">{{stock.symbol}}</span>
+    </md-item-template>
+    <md-not-found>
+        No stock matching!
+    </md-not-found>
+</md-autocomplete>

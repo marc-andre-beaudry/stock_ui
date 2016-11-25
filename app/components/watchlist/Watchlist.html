@@ -1,0 +1,60 @@
+<md-grid-list
+    class="watchlist-grid-list"
+    md-cols="1"
+    md-cols-gt-sm="2"
+    md-cols-gt-md="4"
+    md-row-height="250px"
+    md-gutter=10px>
+    <md-grid-tile ng-repeat="stock in controller.stocks">
+         <md-card class="watchlist-stock-card">
+            <md-subheader class="md-no-sticky">
+                <div layout="row">
+                    <div flex="grow" layout="column">
+                        <div flex="nogrow" class="stock-name">{{stock.name}}</div>
+                        <div flex="auto" class="stock-symbol">{{stock.symbol}}:NASDAQ</div>
+                    </div>
+                    <div flex="nogrow">
+                        <md-button md-no-ink class="md-primary">Trade</md-button>
+                    </div>
+                </div>                
+            </md-subheader>
+
+            <md-card-content>
+                <div layout="row" class="stock-data-top-row">
+                    <div flex=33 layout="column">
+                        <div flex="nogrow" class="stock-data-title">Last</div>
+                        <div flex="auto" class="stock-data-value">{{stock.last | roundMoney}}</div>
+                    </div>
+                    <div flex=33 layout="column">
+                        <div flex="nogrow" class="stock-data-title">Change</div>
+                        <div flex="auto" class="stock-data-value">{{stock.change | roundMoney}}</div>
+                    </div>
+                    <div flex=33 layout="column">
+                        <div flex="nogrow" class="stock-data-title">%</div>
+                        <div flex="auto" class="stock-data-value">{{stock.changePercentage | roundMoney}}</div>
+                    </div>
+                </div>
+
+
+                <div layout="row">
+                    <div flex=33 layout="column">
+                        <div flex="nogrow" class="stock-data-title">Low</div>
+                        <div flex="auto" class="stock-data-value">{{stock.low | roundMoney}}</div>
+                    </div>
+                </div>
+                
+                <div layout="row">
+                    <div flex=33 layout="column">
+                        <div flex="nogrow" class="stock-data-title">Open</div>
+                        <div flex="auto" class="stock-data-value">{{stock.open | roundMoney}}</div>
+                    </div>
+                    <div flex=33 layout="column">
+                        <div flex="nogrow" class="stock-data-title">High</div>
+                        <div flex="auto" class="stock-data-value">{{stock.high | roundMoney}}</div>
+                    </div>
+                </div>
+            </md-card-content>
+        </md-card>    
+    </md-grid-tile>
+</md-grid-list>
+ 

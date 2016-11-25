@@ -3,7 +3,8 @@ angular.module('services').service('AppLocationService', [AppLocationService]);
 function AppLocationService() {
     var actions = [];
     actions.push(
-        {type: "view1", name: "View1", icon: "build", selected: false}
+        {type: "account", name: "Account", icon: "account_balance", selected: false},
+        {type: "watchlist", name: "Watchlist", icon: "dashboard", selected: false}
     );
 
     return {

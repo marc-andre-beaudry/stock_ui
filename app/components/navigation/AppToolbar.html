@@ -3,8 +3,10 @@
         <md-button aria-label="Menu" class="md-icon-button" ng-click="$ctrl.toggleAppNavbar()">
             <md-icon>menu</md-icon>
         </md-button>
-        <h1 class="app-toolbar-title"><strong>Stock UI</strong></h1>
-        <h3 hide-xs>{{$ctrl.location}}</h3>
+        <h1 hide-xs class="app-toolbar-title"><strong>Stock UI</strong></h1>
+        <div hide-xs class="app-toolbar-breadcrumb"><h3>{{$ctrl.location}}</h3></div>
+        
+        <stock-search flex class="app-toolbar-widget"></stock-search> 
     </div>
     <md-menu>
         <md-button aria-label="Settings" class="md-icon-button" ng-click="$mdOpenMenu($event)">

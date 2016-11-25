@@ -23,6 +23,3 @@ gulp.task('serve-watch', ['build'], function (done) {
     instance.reload();
     done();
 });
-
-
-
