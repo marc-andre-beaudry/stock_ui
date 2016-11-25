@@ -1,6 +1,6 @@
 var app = angular.module(
     'app',
-    ['ngMaterial', 'ngRoute', 'services', 'account', 'watchlist', 'stock_search', 'navigation', 'bottom_view']
+    ['ngMaterial', 'ngRoute', 'services', 'account', 'watchlist', 'stock_search', 'order_panel', 'navigation']
 );
 
 app.config(function ($mdThemingProvider, $mdAriaProvider) {
