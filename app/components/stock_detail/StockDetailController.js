@@ -3,12 +3,6 @@ angular.module('stock_detail').controller('StockDetailController', ['$scope', '$
 
 function StockDetailController($scope, $routeParams, stockSearchService) {
     var vm = this;
-    
-    if (!$routeParams.symbol) {
-        vm.noContent = true;
-    } else {
-        vm.stock = vm.exampleStock;
-    }
 
     $scope.$on('current_stock_changed', function (event, arg) {
         vm.stock = vm.exampleStock;
@@ -46,5 +40,12 @@ function StockDetailController($scope, $routeParams, stockSearchService) {
             "avgVolume":543670
         }
     };
+    
+    if (!$routeParams.symbol) {
+        //vm.noContent = true;
+        vm.stock = vm.exampleStock;
+    } else {
+        vm.stock = vm.exampleStock;
+    }
 
 }
